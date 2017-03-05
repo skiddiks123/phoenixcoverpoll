@@ -30,6 +30,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="PhoenixCoverPoll\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PhoenixCoverPoll\models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="PhoenixCoverPoll\__init__.py" />
     <Compile Include="PhoenixCoverPoll\views.py" />
@@ -43,6 +49,7 @@
     <Folder Include="PhoenixCoverPoll\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PhoenixCoverPoll\templates\profile.html" />
     <Content Include="requirements.txt" />
     <Content Include="PhoenixCoverPoll\static\content\bootstrap.css" />
     <Content Include="PhoenixCoverPoll\static\content\bootstrap.min.css" />
@@ -67,7 +74,7 @@
     <Content Include="PhoenixCoverPoll\static\scripts\respond.min.js" />
     <Content Include="PhoenixCoverPoll\static\scripts\_references.js" />
     <Content Include="PhoenixCoverPoll\templates\about.html" />
-    <Content Include="PhoenixCoverPoll\templates\contact.html" />
+    <Content Include="PhoenixCoverPoll\templates\signup.html" />
     <Content Include="PhoenixCoverPoll\templates\index.html" />
     <Content Include="PhoenixCoverPoll\templates\layout.html" />
   </ItemGroup>
