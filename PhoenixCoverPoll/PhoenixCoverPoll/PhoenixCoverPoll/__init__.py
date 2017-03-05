@@ -11,6 +11,7 @@ app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_SSL"] = True
 app.config["MAIL_USERNAME"] = 'test@fenixrostov.ru'
 app.config["MAIL_PASSWORD"] = 'test'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 from PhoenixCoverPoll.views import mail
 mail.init_app(app)

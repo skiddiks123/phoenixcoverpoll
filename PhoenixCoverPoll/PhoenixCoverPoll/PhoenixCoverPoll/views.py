@@ -1,8 +1,8 @@
 from datetime import datetime
 from PhoenixCoverPoll import app
 from flask import Flask, render_template, request, flash, session, redirect, url_for
-from PhoenixCoverPoll.forms import SignupForm
-from flask.ext.mail import Message, Mail
+from PhoenixCoverPoll.forms import ContactForm, SignupForm, SigninForm
+from flask_mail import Message, Mail
 from PhoenixCoverPoll.models import db, User
 
 mail = Mail()
@@ -47,6 +47,22 @@ def profile():
     return redirect(url_for('signin'))
   else:
     return render_template('profile.html')
+
+
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
+    form = SigninForm()
+
+    if request.method == 'POST':
+        if form.validate() == False:
+            return render_template('signin.html', form=form)
+        else:
+            session['email'] = form.email.data
+            return redirect(url_for('profile'))
+
+    elif request.method == 'GET':
+        return render_template('signin.html', form=form)
+
 
 @app.route('/about')
 def about():
